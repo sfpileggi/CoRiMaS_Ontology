@@ -1,0 +1,1041 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+Copyright 2020 Salvatore F Pileggi, Marius Indorf, Ayman Nagi, Wolfgang Kersten
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Citation:
+
+Pileggi, S.F., Indorf, M., Nagi, A. and Kersten, W., 2020. CoRiMaS—An Ontological Approach to Cooperative Risk Management in Seaports. Sustainability, 12(11), p.4767.
+
+-->
+
+<rdf:RDF
+	xmlns="http://www.marius.net#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:www="http://www.marius.net#"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+<rdf:Description rdf:about="http://www.marius.net">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+</rdf:Description>
+<!--  -->
+<!--  -->
+<!-- ################################# -->
+<!-- # -->
+<!-- #    Object Properties -->
+<!-- # -->
+<!-- ################################# -->
+<!--  -->
+<!--  -->
+<!-- http://www.marius.net#aspectRelatedTo -->
+
+<rdf:Description rdf:about="http://www.marius.net#aspectRelatedTo">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<owl:inverseOf rdf:resource="http://www.marius.net#relatedToCooperationAspect"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#CooperationAspect"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#belongs_to_process -->
+
+<rdf:Description rdf:about="http://www.marius.net#belongs_to_process">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#process_structure"/>
+	<owl:inverseOf rdf:resource="http://www.marius.net#composedOf_ProcessPhase"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#ProcessPhase"/>
+	<rdfs:range rdf:resource="http://www.marius.net#Process"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#composedOf -->
+
+<rdf:Description rdf:about="http://www.marius.net#composedOf">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#portProperty"/>
+	<owl:inverseOf rdf:resource="http://www.marius.net#composes"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#Internal_Stakeholder"/>
+	<rdfs:range rdf:resource="http://www.marius.net#SeaPort"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#composedOf_ProcessPhase -->
+
+<rdf:Description rdf:about="http://www.marius.net#composedOf_ProcessPhase">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#process_structure"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#composes -->
+
+<rdf:Description rdf:about="http://www.marius.net#composes">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#portProperty"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#Internal_Stakeholder"/>
+	<rdfs:range rdf:resource="http://www.marius.net#SeaPort"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#contributes -->
+
+<rdf:Description rdf:about="http://www.marius.net#contributes">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<owl:equivalentProperty rdf:resource="http://www.marius.net#hasInterest"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#portProperty"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#External_Stakeholder"/>
+	<rdfs:range rdf:resource="http://www.marius.net#SeaPort"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#hasFeature -->
+
+<rdf:Description rdf:about="http://www.marius.net#hasFeature">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#SeaPort"/>
+	<rdfs:range rdf:resource="http://www.marius.net#PortFeature"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#hasInterest -->
+
+<rdf:Description rdf:about="http://www.marius.net#hasInterest">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#portProperty"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#hasPortLocation -->
+
+<rdf:Description rdf:about="http://www.marius.net#hasPortLocation">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#portProperty"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#SeaPort"/>
+	<rdfs:range rdf:resource="http://www.marius.net#PortLocation"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#hasPortType -->
+
+<rdf:Description rdf:about="http://www.marius.net#hasPortType">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#portProperty"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#SeaPort"/>
+	<rdfs:range rdf:resource="http://www.marius.net#PortType"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#hasStakeholderCategory -->
+
+<rdf:Description rdf:about="http://www.marius.net#hasStakeholderCategory">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#Stakeholder"/>
+	<rdfs:range rdf:resource="http://www.marius.net#StakeholderCategory"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#has_measure -->
+
+<rdf:Description rdf:about="http://www.marius.net#has_measure">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:range rdf:resource="http://www.marius.net#Measure"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#legal_framework -->
+
+<rdf:Description rdf:about="http://www.marius.net#legal_framework">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#SeaPort"/>
+	<rdfs:range rdf:resource="http://www.marius.net#Legal_Framework"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#phase_activity -->
+
+<rdf:Description rdf:about="http://www.marius.net#phase_activity">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#process_structure"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#ProcessPhase"/>
+	<rdfs:range rdf:resource="http://www.marius.net#PhaseActivity"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#portProperty -->
+
+<rdf:Description rdf:about="http://www.marius.net#portProperty">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#previous_phase -->
+
+<rdf:Description rdf:about="http://www.marius.net#previous_phase">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#process_structure"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#ProcessPhase"/>
+	<rdfs:range rdf:resource="http://www.marius.net#ProcessPhase"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#process_structure -->
+
+<rdf:Description rdf:about="http://www.marius.net#process_structure">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#relatedToCooperationAspect -->
+
+<rdf:Description rdf:about="http://www.marius.net#relatedToCooperationAspect">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:range rdf:resource="http://www.marius.net#CooperationAspect"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#relatedToCooperationAspectIntensity -->
+
+<rdf:Description rdf:about="http://www.marius.net#relatedToCooperationAspectIntensity">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#aspectRelatedTo"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#CooperationAspect"/>
+	<rdfs:range rdf:resource="http://www.marius.net#CooperationAspectIntensity"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#relatedToHazard -->
+
+<rdf:Description rdf:about="http://www.marius.net#relatedToHazard">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#aspectRelatedTo"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#CooperationAspect"/>
+	<rdfs:range rdf:resource="http://www.marius.net#Hazard"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#relatedToProcess -->
+
+<rdf:Description rdf:about="http://www.marius.net#relatedToProcess">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#aspectRelatedTo"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#CooperationAspect"/>
+	<rdfs:range rdf:resource="http://www.marius.net#Process"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#relatedToProcessPhase -->
+
+<rdf:Description rdf:about="http://www.marius.net#relatedToProcessPhase">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#aspectRelatedTo"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#CooperationAspect"/>
+	<rdfs:range rdf:resource="http://www.marius.net#ProcessPhase"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#relatedToStakeholder -->
+
+<rdf:Description rdf:about="http://www.marius.net#relatedToStakeholder">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#aspectRelatedTo"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#CooperationAspect"/>
+	<rdfs:range rdf:resource="http://www.marius.net#Stakeholder"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#rm-method -->
+
+<rdf:Description rdf:about="http://www.marius.net#rm-method">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#process_structure"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#ProcessPhase"/>
+	<rdfs:range rdf:resource="http://www.marius.net#RM-Method"/>
+</rdf:Description>
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- ################################# -->
+<!-- # -->
+<!-- #    Data properties -->
+<!-- # -->
+<!-- ################################# -->
+<!--  -->
+<!--  -->
+<!-- http://www.marius.net#acronym -->
+
+<rdf:Description rdf:about="http://www.marius.net#acronym">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#city -->
+
+<rdf:Description rdf:about="http://www.marius.net#city">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#cooperationAspectIntensity -->
+
+<rdf:Description rdf:about="http://www.marius.net#cooperationAspectIntensity">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#CooperationAspect"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#country -->
+
+<rdf:Description rdf:about="http://www.marius.net#country">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#description -->
+
+<rdf:Description rdf:about="http://www.marius.net#description">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#example_of_hazard_category -->
+
+<rdf:Description rdf:about="http://www.marius.net#example_of_hazard_category">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#Hazard"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#hinterlandConnection -->
+
+<rdf:Description rdf:about="http://www.marius.net#hinterlandConnection">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#portAttribute"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#SeaPort"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#label -->
+
+<rdf:Description rdf:about="http://www.marius.net#label">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#name -->
+
+<rdf:Description rdf:about="http://www.marius.net#name">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#portAttribute -->
+
+<rdf:Description rdf:about="http://www.marius.net#portAttribute">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#SeaPort"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#portTerminal -->
+
+<rdf:Description rdf:about="http://www.marius.net#portTerminal">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#portAttribute"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#SeaPort"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#region -->
+
+<rdf:Description rdf:about="http://www.marius.net#region">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#regulation_category -->
+
+<rdf:Description rdf:about="http://www.marius.net#regulation_category">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#regulation_property"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#regulation_level -->
+
+<rdf:Description rdf:about="http://www.marius.net#regulation_level">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#regulation_property"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#regulation_property -->
+
+<rdf:Description rdf:about="http://www.marius.net#regulation_property">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#risk_consequence -->
+
+<rdf:Description rdf:about="http://www.marius.net#risk_consequence">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#risk_property"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#Hazard"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#risk_occurrenceProbability -->
+
+<rdf:Description rdf:about="http://www.marius.net#risk_occurrenceProbability">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#risk_property"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#Hazard"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#risk_property -->
+
+<rdf:Description rdf:about="http://www.marius.net#risk_property">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#Hazard"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#url -->
+
+<rdf:Description rdf:about="http://www.marius.net#url">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#waterCondition -->
+
+<rdf:Description rdf:about="http://www.marius.net#waterCondition">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#portAttribute"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#SeaPort"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#weatherCondition -->
+
+<rdf:Description rdf:about="http://www.marius.net#weatherCondition">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://www.marius.net#portAttribute"/>
+	<rdfs:domain rdf:resource="http://www.marius.net#SeaPort"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- ################################# -->
+<!-- # -->
+<!-- #    Classes -->
+<!-- # -->
+<!-- ################################# -->
+<!--  -->
+<!--  -->
+<!-- http://www.marius.net#Intentional_Hazard -->
+
+<rdf:Description rdf:about="http://www.marius.net#Intentional_Hazard">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#Man-made_Hazard"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Unintentional_Hazard -->
+
+<rdf:Description rdf:about="http://www.marius.net#Unintentional_Hazard">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#Man-made_Hazard"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Academic_and_Community -->
+
+<rdf:Description rdf:about="http://www.marius.net#Academic_and_Community">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#External_Stakeholder"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#Economic_direct"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#Economic_indirect"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#Legislation_and_Public"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Actor -->
+
+<rdf:Description rdf:about="http://www.marius.net#Actor">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<owl:equivalentClass rdf:resource="http://www.marius.net#Stakeholder"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Authority -->
+
+<rdf:Description rdf:about="http://www.marius.net#Authority">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#Internal_Stakeholder"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#Private_Company"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#CooperationAspect -->
+
+<rdf:Description rdf:about="http://www.marius.net#CooperationAspect">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#CooperationAspectIntensity -->
+
+<rdf:Description rdf:about="http://www.marius.net#CooperationAspectIntensity">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Economic_direct -->
+
+<rdf:Description rdf:about="http://www.marius.net#Economic_direct">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#External_Stakeholder"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#Economic_indirect"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#Legislation_and_Public"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Economic_indirect -->
+
+<rdf:Description rdf:about="http://www.marius.net#Economic_indirect">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#External_Stakeholder"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#Legislation_and_Public"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#External_Stakeholder -->
+
+<rdf:Description rdf:about="http://www.marius.net#External_Stakeholder">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#Stakeholder"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#Internal_Stakeholder"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Geophysical_Hazard -->
+
+<rdf:Description rdf:about="http://www.marius.net#Geophysical_Hazard">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#Natural_Hazard"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#Hydrological_Hazard"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#Metrological_Hazard"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Government -->
+
+<rdf:Description rdf:about="http://www.marius.net#Government">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#Legislation_and_Public"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Hazard -->
+
+<rdf:Description rdf:about="http://www.marius.net#Hazard">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<owl:equivalentClass rdf:resource="http://www.marius.net#Risk"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#HinterlandConnections_Feature -->
+
+<rdf:Description rdf:about="http://www.marius.net#HinterlandConnections_Feature">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#PortFeature"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Hydrological_Hazard -->
+
+<rdf:Description rdf:about="http://www.marius.net#Hydrological_Hazard">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#Natural_Hazard"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#Metrological_Hazard"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Internal_Stakeholder -->
+
+<rdf:Description rdf:about="http://www.marius.net#Internal_Stakeholder">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#Stakeholder"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Legal_Framework -->
+
+<rdf:Description rdf:about="http://www.marius.net#Legal_Framework">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Legislation_and_Public -->
+
+<rdf:Description rdf:about="http://www.marius.net#Legislation_and_Public">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#External_Stakeholder"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#LocationType -->
+
+<rdf:Description rdf:about="http://www.marius.net#LocationType">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#PortType"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Location_Feature -->
+
+<rdf:Description rdf:about="http://www.marius.net#Location_Feature">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#PortFeature"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Man-made_Hazard -->
+
+<rdf:Description rdf:about="http://www.marius.net#Man-made_Hazard">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#Hazard"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#Natural_Hazard"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Measure -->
+
+<rdf:Description rdf:about="http://www.marius.net#Measure">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Metrological_Hazard -->
+
+<rdf:Description rdf:about="http://www.marius.net#Metrological_Hazard">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#Natural_Hazard"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Natural_Hazard -->
+
+<rdf:Description rdf:about="http://www.marius.net#Natural_Hazard">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#Hazard"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#OrganizationType -->
+
+<rdf:Description rdf:about="http://www.marius.net#OrganizationType">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#PortType"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#PhaseActivity -->
+
+<rdf:Description rdf:about="http://www.marius.net#PhaseActivity">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#Process"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#ProcessPhase"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#RM-Method"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Player -->
+
+<rdf:Description rdf:about="http://www.marius.net#Player">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<owl:equivalentClass rdf:resource="http://www.marius.net#Stakeholder"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#PortFeature -->
+
+<rdf:Description rdf:about="http://www.marius.net#PortFeature">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#PortLocation -->
+
+<rdf:Description rdf:about="http://www.marius.net#PortLocation">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#PortType -->
+
+<rdf:Description rdf:about="http://www.marius.net#PortType">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#SeaPort"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Private_Company -->
+
+<rdf:Description rdf:about="http://www.marius.net#Private_Company">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#Internal_Stakeholder"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Proactive -->
+
+<rdf:Description rdf:about="http://www.marius.net#Proactive">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#Measure"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Process -->
+
+<rdf:Description rdf:about="http://www.marius.net#Process">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#ProcessPhase"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#ProcessPhase -->
+
+<rdf:Description rdf:about="http://www.marius.net#ProcessPhase">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#RM-Method -->
+
+<rdf:Description rdf:about="http://www.marius.net#RM-Method">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#RM-Method_Qualitative -->
+
+<rdf:Description rdf:about="http://www.marius.net#RM-Method_Qualitative">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#RM-Method"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#RM-Method_Quantitative -->
+
+<rdf:Description rdf:about="http://www.marius.net#RM-Method_Quantitative">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#RM-Method"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#RM-Method_Quantitative_Mathematical -->
+
+<rdf:Description rdf:about="http://www.marius.net#RM-Method_Quantitative_Mathematical">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#RM-Method_Quantitative"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#RM-Method_Quantitative_Simulationbased -->
+
+<rdf:Description rdf:about="http://www.marius.net#RM-Method_Quantitative_Simulationbased">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#RM-Method_Quantitative"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#RM-Method_SemiQuantitative -->
+
+<rdf:Description rdf:about="http://www.marius.net#RM-Method_SemiQuantitative">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#RM-Method"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#RM-Relevant_Regulation -->
+
+<rdf:Description rdf:about="http://www.marius.net#RM-Relevant_Regulation">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#RM-Relevant_Standard"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#RM-Relevant_Standard -->
+
+<rdf:Description rdf:about="http://www.marius.net#RM-Relevant_Standard">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Reactive -->
+
+<rdf:Description rdf:about="http://www.marius.net#Reactive">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#Measure"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Region -->
+
+<rdf:Description rdf:about="http://www.marius.net#Region">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#PortLocation"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Risk -->
+
+<rdf:Description rdf:about="http://www.marius.net#Risk">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#SeaPort -->
+
+<rdf:Description rdf:about="http://www.marius.net#SeaPort">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#VirtualOrganization"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#SpecializationType -->
+
+<rdf:Description rdf:about="http://www.marius.net#SpecializationType">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#PortType"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Stakeholder -->
+
+<rdf:Description rdf:about="http://www.marius.net#Stakeholder">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#StakeholderCategory"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#StakeholderCategory -->
+
+<rdf:Description rdf:about="http://www.marius.net#StakeholderCategory">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#StakeholderCategory_byPosition -->
+
+<rdf:Description rdf:about="http://www.marius.net#StakeholderCategory_byPosition">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#StakeholderCategory"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#StakeholderCategory_byRole"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#StakeholderCategory_byType"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#StakeholderCategory_byRole -->
+
+<rdf:Description rdf:about="http://www.marius.net#StakeholderCategory_byRole">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#StakeholderCategory"/>
+	<owl:disjointWith rdf:resource="http://www.marius.net#StakeholderCategory_byType"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#StakeholderCategory_byType -->
+
+<rdf:Description rdf:about="http://www.marius.net#StakeholderCategory_byType">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#StakeholderCategory"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Terminals_Feature -->
+
+<rdf:Description rdf:about="http://www.marius.net#Terminals_Feature">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#PortFeature"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#VirtualOrganization -->
+
+<rdf:Description rdf:about="http://www.marius.net#VirtualOrganization">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#WaterAccessType -->
+
+<rdf:Description rdf:about="http://www.marius.net#WaterAccessType">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.marius.net#PortType"/>
+</rdf:Description>
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- ################################# -->
+<!-- # -->
+<!-- #    Individuals -->
+<!-- # -->
+<!-- ################################# -->
+<!--  -->
+<!--  -->
+<!-- http://www.marius.net#Accessing_and_application -->
+
+<rdf:Description rdf:about="http://www.marius.net#Accessing_and_application">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#PhaseActivity"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Analysis -->
+
+<rdf:Description rdf:about="http://www.marius.net#Analysis">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#PhaseActivity"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Analytical-Hierarchy-Process_Method -->
+
+<rdf:Description rdf:about="http://www.marius.net#Analytical-Hierarchy-Process_Method">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#RM-Method"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Capturing -->
+
+<rdf:Description rdf:about="http://www.marius.net#Capturing">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#PhaseActivity"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Checklists_Method -->
+
+<rdf:Description rdf:about="http://www.marius.net#Checklists_Method">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#RM-Method"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Coding -->
+
+<rdf:Description rdf:about="http://www.marius.net#Coding">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#PhaseActivity"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Effectiveness_check -->
+
+<rdf:Description rdf:about="http://www.marius.net#Effectiveness_check">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#PhaseActivity"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Evaluation -->
+
+<rdf:Description rdf:about="http://www.marius.net#Evaluation">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#PhaseActivity"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Fault-Tree-Analysis_Method -->
+
+<rdf:Description rdf:about="http://www.marius.net#Fault-Tree-Analysis_Method">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#RM-Method"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Handling -->
+
+<rdf:Description rdf:about="http://www.marius.net#Handling">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#PhaseActivity"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#High -->
+
+<rdf:Description rdf:about="http://www.marius.net#High">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#CooperationAspectIntensity"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Identification -->
+
+<rdf:Description rdf:about="http://www.marius.net#Identification">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#PhaseActivity"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Knowledge_Management_Process -->
+
+<rdf:Description rdf:about="http://www.marius.net#Knowledge_Management_Process">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#Process"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#LandLord_model -->
+
+<rdf:Description rdf:about="http://www.marius.net#LandLord_model">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#SpecializationType"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Low -->
+
+<rdf:Description rdf:about="http://www.marius.net#Low">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#CooperationAspectIntensity"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Measurement -->
+
+<rdf:Description rdf:about="http://www.marius.net#Measurement">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#PhaseActivity"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Port_of_Hamburg -->
+
+<rdf:Description rdf:about="http://www.marius.net#Port_of_Hamburg">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#SeaPort"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Proactive -->
+
+<rdf:Description rdf:about="http://www.marius.net#Proactive">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Publishing -->
+
+<rdf:Description rdf:about="http://www.marius.net#Publishing">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#PhaseActivity"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#RMP_Phase_1 -->
+
+<rdf:Description rdf:about="http://www.marius.net#RMP_Phase_1">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#ProcessPhase"/>
+	<www:phase_activity rdf:resource="http://www.marius.net#Identification"/>
+	<www:rm-method rdf:resource="http://www.marius.net#Checklists_Method"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#RMP_Phase_2 -->
+
+<rdf:Description rdf:about="http://www.marius.net#RMP_Phase_2">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#ProcessPhase"/>
+	<www:phase_activity rdf:resource="http://www.marius.net#Analysis"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#RMP_Phase_3 -->
+
+<rdf:Description rdf:about="http://www.marius.net#RMP_Phase_3">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#ProcessPhase"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#RMP_Phase_4 -->
+
+<rdf:Description rdf:about="http://www.marius.net#RMP_Phase_4">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#ProcessPhase"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#RMP_Phase_5 -->
+
+<rdf:Description rdf:about="http://www.marius.net#RMP_Phase_5">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#ProcessPhase"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Reactive -->
+
+<rdf:Description rdf:about="http://www.marius.net#Reactive">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Risk_Management_Process -->
+
+<rdf:Description rdf:about="http://www.marius.net#Risk_Management_Process">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#Process"/>
+	<www:composedOf_ProcessPhase rdf:resource="http://www.marius.net#RMP_Phase_1"/>
+	<www:composedOf_ProcessPhase rdf:resource="http://www.marius.net#RMP_Phase_2"/>
+	<www:composedOf_ProcessPhase rdf:resource="http://www.marius.net#RMP_Phase_3"/>
+	<www:composedOf_ProcessPhase rdf:resource="http://www.marius.net#RMP_Phase_4"/>
+	<www:composedOf_ProcessPhase rdf:resource="http://www.marius.net#RMP_Phase_5"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#Sharing -->
+
+<rdf:Description rdf:about="http://www.marius.net#Sharing">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#PhaseActivity"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#VeryHigh -->
+
+<rdf:Description rdf:about="http://www.marius.net#VeryHigh">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#CooperationAspectIntensity"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.marius.net#VeryLow -->
+
+<rdf:Description rdf:about="http://www.marius.net#VeryLow">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.marius.net#CooperationAspectIntensity"/>
+</rdf:Description>
+<!--  -->
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
+</rdf:RDF>
